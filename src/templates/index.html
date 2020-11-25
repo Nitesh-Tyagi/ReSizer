@@ -1,0 +1,198 @@
+<html>
+<head>
+  <title>project</title>
+
+<style type="text/css">
+    
+header {
+  background-color: #D3D3D3;
+  font-size: 30px;
+
+}
+body{
+  background-color: #FAEBD7;
+    }
+.heading {
+    padding: 10px;
+
+    }
+.navbar { 
+  overflow: hidden;
+  background-color: #333;
+  margin-right: 10px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: white;
+  min-width: 150px;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar .search-container {
+  float: right;
+}  
+.steps-card {
+  float: left;
+  width: 35%;
+  padding: 100px;
+
+ }
+ @media screen and (max-width: 600px) {
+  .steps-card {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.steps {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 28px;
+    text-align: left;
+    background-color: #f1f1f1;
+    font-size: 25px;
+    border-radius: 20px;
+}
+.vertical-line {
+    border-left: 2px solid green;
+    color: #FF7F50;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    top: 320px;
+ }  
+.exam{
+  font-size: 20px;
+  padding: 150px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.exam-selection{
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 15px;
+}
+.image-upload{
+  font-size: 25px;
+  text-align: center;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+    <header>
+        <title>ReSizer</title>
+      <h1 class="heading"><img src="https://i.pinimg.com/originals/ed/cb/25/edcb25db550840d42456b67a2f35f6a9.png" width="50" height="50">ReSizer</h1>
+        <div class="navbar">
+            <a href="">Home</a>
+            <a >Exams Info</a>
+            <a >Photos</a>
+            <a >Team</a>
+                
+             </div> 
+        </div>
+
+        
+  </header>
+
+  <main>
+  
+    
+  <div class="steps-card">
+    <div class="steps">
+      <h2>STEPS TO COMPRESS YOUR FILE:</h2>
+      <p>
+      <b>Step1:</b>Upload the file from your device.<br>
+      <b>Step2:</b>Select the exam according to which you want to compress file.<br>
+      <b>Step3:</b>Click compress and download the compressed files.
+      </p>
+    </div>
+    </div>
+    <div class="vertical-line"></div>
+    
+      <div class="image-upload">
+        <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.ImageForm.option }}
+    <!-- {% if form.ImageForm.option == 5 %}
+      {{ form.ImageForm.aa }}
+      {{ form.ImageForm.bb }}
+    {% endif %} -->
+  <button type="submit" >Upload</button>
+</form>
+
+{% if img_obj %}
+  <!-- <img src="{{ img_obj.image.url}}" id="img" alt="connect"> -->
+  <a href="{{img_obj.image.url}}" download><button type="button">Download</button></a>
+  
+{% endif %}
+
+
+
+      </div>
+      
+    
+
+  </main> 
+
+
+
+
+</body>
+</html>
