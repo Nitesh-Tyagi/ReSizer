@@ -14,12 +14,12 @@ class Image(models.Model):
 		return self.title
 	def save(self):
 		if self.image:
-			photo = Im.open(self.image)
+			photo1 = Im.open(self.image)
 			# WIDTH , HEIGHT
 			
-			l=[(10,10),(14,11),(20,30),(10,12),(20,30),(self.height,self.width)]
-			size=(l[self.option][0] , l[self.option][1])
-			photo.resize(size, Im.ANTIALIAS)
-			photo.save(self.image.path)
+			l=[(100,100),(200,200),(300,300),(400,400),(500,500),(self.height,self.width)]
+			# size=((l[self.option][0] , l[self.option][1]))
+			photo2=photo1.resize((l[self.option][0] , l[self.option][1]))
+			photo2.save(self.image.path)
 
 			
