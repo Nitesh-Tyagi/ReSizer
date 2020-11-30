@@ -2,6 +2,7 @@
 Django based image size reduction site, with a few presets and a custom size option.
 
 This is a django based image reduction website, which has a few preset sizes and a custom input for output size.
+
 Migrations and database have already been created.
 
 - src/trydjango is the project.
