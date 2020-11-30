@@ -12,3 +12,5 @@ Migrations and database have already been created.
 - src/media is the designated place for image sr=torage on the server
 
 Feel free to use the code and contact me for any queries.
+
+Constructive critisism is always welcome!
